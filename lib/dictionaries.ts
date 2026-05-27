@@ -2,7 +2,10 @@ export const LOCALES = ["uz", "ru", "en"] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "uz";
 
-export type Dictionary = typeof dictionaries.uz;
+// Union of the three locale shapes. Each has the same structure; only the
+// string values differ. Components only render values as text, so the union
+// is safe everywhere a `Dictionary` is consumed.
+export type Dictionary = (typeof dictionaries)[Locale];
 
 export const dictionaries = {
   uz: {
