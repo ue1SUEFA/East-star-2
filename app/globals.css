@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  /* ============================================================
+     East Star brand palette — extracted from the official logo.
+     - brand-*  : deep navy (primary)
+     - accent-* : crimson red (secondary / underlines / highlights)
+     - cream    : warm off-white used as section background
+     ============================================================ */
+
+  /* Navy */
+  --color-brand-50:  #f0f3fa;
+  --color-brand-100: #dde4f2;
+  --color-brand-200: #bcc8e4;
+  --color-brand-300: #92a3d0;
+  --color-brand-400: #6478b6;
+  --color-brand-500: #3f5499;
+  --color-brand-600: #2b3e7e;
+  --color-brand-700: #1f2f63;
+  --color-brand-800: #16224a;
+  --color-brand-900: #101a3a;
+  --color-brand-950: #0a112a;
+
+  /* Brand-true navy that exactly matches the badge */
+  --color-brand: #1b2a5e;
+
+  /* Crimson accent */
+  --color-accent-50:  #fdeef1;
+  --color-accent-100: #fad6dc;
+  --color-accent-200: #f3aab6;
+  --color-accent-300: #e87e90;
+  --color-accent-400: #d85569;
+  --color-accent-500: #b8324a;
+  --color-accent-600: #9c2438;
+  --color-accent-700: #8b1f2f;  /* brand-true crimson */
+  --color-accent-800: #6f1825;
+  --color-accent-900: #56121d;
+
+  /* Ink + cream */
+  --color-ink-900: #0f172a;
+  --color-ink-700: #334155;
+  --color-ink-500: #64748b;
+  --color-cream-50: #fbf8f3;
+  --color-cream-100: #f5efe4;
+
+  /* Typography — wired up by next/font in app/layout.tsx */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", "Times New Roman",
+    Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--color-ink-900);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reusable utility — classical serif used on the logo wordmark. */
+.font-display {
+  font-family: var(--font-serif);
+  font-feature-settings: "ss01", "liga";
+  letter-spacing: 0.01em;
+}
+
+/* Crimson underline ornament — echoes the red line under "EAST STAR"
+   on the logo lockup. Drop it on eyebrows / section titles. */
+.brand-underline {
+  position: relative;
+  display: inline-block;
+}
+.brand-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 2px;
+  background: var(--color-accent-700);
+}
