@@ -54,11 +54,10 @@ export async function POST(req: Request) {
     );
   }
 
-  const { name, phone, grade, locale, website } = (body ?? {}) as {
+  const { name, phone, grade, website } = (body ?? {}) as {
     name?: unknown;
     phone?: unknown;
     grade?: unknown;
-    locale?: unknown;
     website?: unknown;
   };
 
@@ -104,8 +103,6 @@ export async function POST(req: Request) {
 
   const safeName = escapeHtml(name.trim()).slice(0, 80);
   const safePhone = escapeHtml(normalizePhone(phone));
-  const localeTag =
-    typeof locale === "string" && /^[a-z]{2}$/.test(locale) ? locale : "uz";
   const ts = new Date().toLocaleString("ru-RU", {
     timeZone: "Asia/Tashkent",
   });
@@ -117,7 +114,6 @@ export async function POST(req: Request) {
     `<b>Имя:</b> ${safeName}\n` +
     `<b>Телефон:</b> <a href="tel:${safePhone}">${safePhone}</a>\n` +
     `<b>Класс:</b> ${gradeLabel}\n` +
-    `<b>Язык формы:</b> ${localeTag}\n` +
     `<b>Время (Ташкент):</b> ${ts}`;
 
   try {
