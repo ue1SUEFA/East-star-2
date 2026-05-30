@@ -72,7 +72,7 @@ export function LeadForm({ d, locale }: { d: Dictionary; locale: Locale }) {
       grade === "" ||
       !Number.isInteger(gradeNum) ||
       gradeNum < 0 ||
-      gradeNum > 4
+      gradeNum > 11
     ) {
       next.grade = t.validation.gradeRequired;
     }
@@ -241,7 +241,7 @@ export function LeadForm({ d, locale }: { d: Dictionary; locale: Locale }) {
           <option value="" disabled>
             {t.gradePlaceholder}
           </option>
-          {Array.from({ length: 5 }, (_, i) => (
+          {Array.from({ length: 12 }, (_, i) => (
             <option key={i} value={String(i)}>
               {i === 0 ? t.gradeZero : String(i)}
             </option>

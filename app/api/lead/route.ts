@@ -86,7 +86,7 @@ export async function POST(req: Request) {
     typeof grade !== "number" ||
     !Number.isInteger(grade) ||
     grade < 0 ||
-    grade > 4
+    grade > 11
   ) {
     return NextResponse.json(
       { ok: false, error: "Invalid grade" },
