@@ -110,15 +110,15 @@ export async function POST(req: Request) {
     timeZone: "Asia/Tashkent",
   });
 
-  const gradeLabel = grade === 0 ? "0 (preschool)" : String(grade);
+  const gradeLabel = grade === 0 ? "0 (дошкольный)" : String(grade);
 
   const text =
-    `<b>🎓 East Star — new application</b>\n\n` +
-    `<b>Name:</b> ${safeName}\n` +
-    `<b>Phone:</b> <a href="tel:${safePhone}">${safePhone}</a>\n` +
-    `<b>Grade:</b> ${gradeLabel}\n` +
-    `<b>Language:</b> ${localeTag}\n` +
-    `<b>Time (Tashkent):</b> ${ts}`;
+    `<b>🎓 East Star — новая заявка</b>\n\n` +
+    `<b>Имя:</b> ${safeName}\n` +
+    `<b>Телефон:</b> <a href="tel:${safePhone}">${safePhone}</a>\n` +
+    `<b>Класс:</b> ${gradeLabel}\n` +
+    `<b>Язык формы:</b> ${localeTag}\n` +
+    `<b>Время (Ташкент):</b> ${ts}`;
 
   try {
     const tgRes = await fetch(
