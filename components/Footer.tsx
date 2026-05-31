@@ -36,7 +36,7 @@ export function Footer({ d }: { d: Dictionary }) {
               {d.footer.followUs}
             </div>
             <a
-              href="https://instagram.com/"
+              href="https://www.instagram.com/eaststar_privateschool/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-white transition hover:text-accent-300"
