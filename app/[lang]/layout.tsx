@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Manrope, Inter } from "next/font/google";
 import { MetaPixel } from "@/components/MetaPixel";
 import {
   LOCALES,
@@ -9,11 +9,12 @@ import {
   type Locale,
 } from "@/lib/dictionaries";
 
-// Classical serif used on the logo wordmark ("EAST STAR")
-const cormorant = Cormorant_Garamond({
+// Display grotesque used for headings and accent type.
+// Per customer feedback: clean, sans-serif (без засечек).
+const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
-  weight: ["500", "600", "700"],
-  variable: "--font-cormorant",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-manrope",
   display: "swap",
 });
 
@@ -54,7 +55,7 @@ export default async function LangLayout({
   if (!isValidLocale(lang)) notFound();
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "";
   return (
-    <html lang={lang} className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang={lang} className={`${manrope.variable} ${inter.variable}`}>
       <body>
         <MetaPixel pixelId={pixelId} />
         {children}

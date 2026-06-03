@@ -59,20 +59,21 @@ export function Hero({ d }: { d: Dictionary }) {
             </dl>
           </div>
 
-          {/* Visual: the brand seal on a creamy disc */}
+          {/* Visual: the navy badge with the white star — clean and iconic */}
           <div className="relative flex items-center justify-center">
             <div className="relative aspect-square w-full max-w-md">
-              {/* Decorative concentric rings echoing the logo */}
-              <div className="absolute inset-0 rounded-full border-2 border-brand-700/15" />
-              <div className="absolute inset-3 rounded-full border border-accent-700/30" />
-              <div className="absolute inset-6 rounded-full bg-gradient-to-br from-cream-50 via-white to-brand-50 shadow-[0_30px_60px_-20px_rgba(27,42,94,0.35)]" />
+              {/* Soft navy glow behind the badge */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-4 rounded-full bg-brand-700/15 blur-2xl"
+              />
               <Image
-                src="/logos/full-light.jpg"
+                src="/logos/badge-icon-navy.jpg"
                 alt="East Star Private School"
                 fill
                 priority
                 sizes="(min-width: 1024px) 440px, 80vw"
-                className="object-contain p-8"
+                className="relative rounded-full object-contain drop-shadow-[0_30px_60px_rgba(27,42,94,0.35)]"
               />
             </div>
             <div className="absolute -bottom-4 -left-2 hidden rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-lg sm:block">

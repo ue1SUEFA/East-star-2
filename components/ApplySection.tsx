@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
 import { LeadForm } from "./LeadForm";
 
@@ -14,15 +13,6 @@ export function ApplySection({
       id="apply"
       className="relative overflow-hidden bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 py-20"
     >
-      {/* Decorative seal — bottom-left */}
-      <Image
-        src="/logos/badge-icon-navy.jpg"
-        alt=""
-        aria-hidden="true"
-        width={400}
-        height={400}
-        className="pointer-events-none absolute -bottom-24 -left-24 h-96 w-96 opacity-[0.08]"
-      />
       {/* Crimson hairline */}
       <div className="absolute inset-x-0 top-0 h-[2px] bg-accent-700" />
 

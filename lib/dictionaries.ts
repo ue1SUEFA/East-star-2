@@ -10,9 +10,9 @@ export type Dictionary = (typeof dictionaries)[Locale];
 export const dictionaries = {
   uz: {
     meta: {
-      title: "East Star — Toshkentdagi xususiy maktab",
+      title: "East Star – Toshkentdagi xususiy maktab",
       description:
-        "East Star — Toshkentdagi zamonaviy xususiy maktab. Kuchli o'qituvchilar, kichik sinflar, ingliz tili va STEM yo'nalishlari. Ariza qoldiring — biz siz bilan bog'lanamiz.",
+        "East Star – Toshkentdagi zamonaviy xususiy maktab. Kuchli o'qituvchilar, kichik sinflar, ingliz tili va STEM yo'nalishlari. Ariza qoldiring – biz siz bilan bog'lanamiz.",
     },
     nav: {
       about: "Maktab haqida",
@@ -25,10 +25,10 @@ export const dictionaries = {
     },
     hero: {
       badge: "Toshkentdagi xususiy maktab",
-      title: "East Star — bolangizning kelajagi shu yerdan boshlanadi",
+      title: "East Star – bolangizning kelajagi shu yerdan boshlanadi",
       subtitle:
         "Kichik sinflar, individual yondashuv va xalqaro standartdagi ta'lim. Maktabgacha (0-sinf) va 1–4-sinflar uchun zamonaviy o'quv dasturi.",
-      tagline: "Buyuk o'tmish — yorqin kelajak",
+      tagline: "Buyuk o'tmish – yorqin kelajak",
       ctaPrimary: "Ariza qoldirish",
       ctaSecondary: "Ko'proq bilish",
       stats: [
@@ -41,8 +41,8 @@ export const dictionaries = {
       eyebrow: "Maktab haqida",
       title: "Bilim, tarbiya va xalqaro tafakkur",
       body: [
-        "East Star — Toshkentda joylashgan zamonaviy xususiy maktab. Biz har bir bolaga alohida e'tibor qaratamiz va uning iste'dodini ochishga yordam beramiz.",
-        "Bizning maqsad — o'quvchilarni nafaqat imtihonlarga, balki hayotga ham tayyorlash. Shuning uchun darslar tanqidiy fikrlash, jamoa bo'lib ishlash va ijodiy yondashuvga asoslangan.",
+        "East Star – Toshkentda joylashgan zamonaviy xususiy maktab. Biz har bir bolaga alohida e'tibor qaratamiz va uning iste'dodini ochishga yordam beramiz.",
+        "Bizning maqsad – o'quvchilarni nafaqat imtihonlarga, balki hayotga ham tayyorlash. Shuning uchun darslar tanqidiy fikrlash, jamoa bo'lib ishlash va ijodiy yondashuvga asoslangan.",
       ],
     },
     programs: {
@@ -69,7 +69,7 @@ export const dictionaries = {
       items: [
         {
           title: "Kichik sinflar",
-          desc: "Bir sinfda 20 nafargacha o'quvchi — har bir bolaga e'tibor qaratiladi.",
+          desc: "Bir sinfda 20 nafargacha o'quvchi – har bir bolaga e'tibor qaratiladi.",
         },
         {
           title: "Kuchli o'qituvchilar",
@@ -77,7 +77,7 @@ export const dictionaries = {
         },
         {
           title: "Ingliz va xitoy tillari",
-          desc: "Ingliz va xitoy tillari kuchaytirilgan dasturda — native speaker o'qituvchilar va kundalik amaliyot.",
+          desc: "Ingliz va xitoy tillari kuchaytirilgan dasturda – native speaker o'qituvchilar va kundalik amaliyot.",
         },
         {
           title: "Xavfsiz muhit",
@@ -96,7 +96,7 @@ export const dictionaries = {
     teachers: {
       eyebrow: "O'qituvchilar",
       title: "Bolangiz uchun eng yaxshilari",
-      body: "Bizning o'qituvchilarimiz — O'zbekiston va xorijdagi yetakchi universitetlar bitiruvchilari. Ularning ko'pchiligi CELTA, TKT va boshqa xalqaro sertifikatlarga ega.",
+      body: "Bizning o'qituvchilarimiz – O'zbekiston va xorijdagi yetakchi universitetlar bitiruvchilari. Ularning ko'pchiligi CELTA, TKT va boshqa xalqaro sertifikatlarga ega.",
     },
     facilities: {
       eyebrow: "Sharoit",
@@ -120,7 +120,7 @@ export const dictionaries = {
     },
     form: {
       eyebrow: "Ariza",
-      title: "Ariza qoldiring — biz qo'ng'iroq qilamiz",
+      title: "Ariza qoldiring va biz qo'ng'iroq qilamiz",
       subtitle:
         "Ma'lumotlaringizni qoldiring, biz 1 ish kuni ichida siz bilan bog'lanamiz va savollaringizga javob beramiz.",
       nameLabel: "Ism (siz yoki bolangizning ismi)",
@@ -147,7 +147,7 @@ export const dictionaries = {
         "Ma'lumotlaringiz faqat siz bilan bog'lanish uchun ishlatiladi.",
     },
     footer: {
-      tagline: "Buyuk o'tmish — yorqin kelajak.",
+      tagline: "Buyuk o'tmish – yorqin kelajak.",
       rights: "Barcha huquqlar himoyalangan.",
       followUs: "Bizni kuzatib boring",
     },
@@ -155,9 +155,9 @@ export const dictionaries = {
 
   ru: {
     meta: {
-      title: "East Star — частная школа в Ташкенте",
+      title: "East Star – частная школа в Ташкенте",
       description:
-        "East Star — современная частная школа в Ташкенте. Сильные учителя, маленькие классы, английский и STEM. Оставьте заявку — мы свяжемся с вами.",
+        "East Star – современная частная школа в Ташкенте. Сильные учителя, маленькие классы, английский и STEM. Оставьте заявку – мы свяжемся с вами.",
     },
     nav: {
       about: "О школе",
@@ -170,10 +170,10 @@ export const dictionaries = {
     },
     hero: {
       badge: "Частная школа в Ташкенте",
-      title: "East Star — будущее вашего ребёнка начинается здесь",
+      title: "East Star – будущее вашего ребёнка начинается здесь",
       subtitle:
         "Маленькие классы, индивидуальный подход и образование международного уровня. Современная программа для дошкольного (0 класс) и 1–4 классов.",
-      tagline: "Великое прошлое — Яркое будущее",
+      tagline: "Великое прошлое – Яркое будущее",
       ctaPrimary: "Оставить заявку",
       ctaSecondary: "Узнать больше",
       stats: [
@@ -186,8 +186,8 @@ export const dictionaries = {
       eyebrow: "О школе",
       title: "Знания, воспитание и международное мышление",
       body: [
-        "East Star — современная частная школа в Ташкенте. Мы уделяем внимание каждому ребёнку и помогаем раскрыть его таланты.",
-        "Наша цель — подготовить детей не только к экзаменам, но и к жизни. Поэтому уроки строятся на критическом мышлении, командной работе и творческом подходе.",
+        "East Star – современная частная школа в Ташкенте. Мы уделяем внимание каждому ребёнку и помогаем раскрыть его таланты.",
+        "Наша цель – подготовить детей не только к экзаменам, но и к жизни. Поэтому уроки строятся на критическом мышлении, командной работе и творческом подходе.",
       ],
     },
     programs: {
@@ -214,7 +214,7 @@ export const dictionaries = {
       items: [
         {
           title: "Маленькие классы",
-          desc: "До 20 учеников в классе — внимание каждому ребёнку.",
+          desc: "До 20 учеников в классе – внимание каждому ребёнку.",
         },
         {
           title: "Сильные учителя",
@@ -222,7 +222,7 @@ export const dictionaries = {
         },
         {
           title: "Английский и китайский",
-          desc: "Усиленные английский и китайский — носители языка и ежедневная практика.",
+          desc: "Усиленные английский и китайский – носители языка и ежедневная практика.",
         },
         {
           title: "Безопасная среда",
@@ -241,7 +241,7 @@ export const dictionaries = {
     teachers: {
       eyebrow: "Учителя",
       title: "Лучшие для вашего ребёнка",
-      body: "Наши учителя — выпускники ведущих университетов Узбекистана и зарубежья. Многие из них имеют CELTA, TKT и другие международные сертификаты.",
+      body: "Наши учителя – выпускники ведущих университетов Узбекистана и зарубежья. Многие из них имеют CELTA, TKT и другие международные сертификаты.",
     },
     facilities: {
       eyebrow: "Условия",
@@ -265,7 +265,7 @@ export const dictionaries = {
     },
     form: {
       eyebrow: "Заявка",
-      title: "Оставьте заявку — мы вам перезвоним",
+      title: "Оставьте заявку и мы вам перезвоним",
       subtitle:
         "Оставьте свои данные, и мы свяжемся с вами в течение 1 рабочего дня и ответим на все вопросы.",
       nameLabel: "Имя (ваше или ребёнка)",
@@ -293,7 +293,7 @@ export const dictionaries = {
         "Ваши данные используются только для связи с вами.",
     },
     footer: {
-      tagline: "Великое прошлое — Яркое будущее.",
+      tagline: "Великое прошлое – Яркое будущее.",
       rights: "Все права защищены.",
       followUs: "Мы в соцсетях",
     },
@@ -301,7 +301,7 @@ export const dictionaries = {
 
   en: {
     meta: {
-      title: "East Star — Private School in Tashkent",
+      title: "East Star – Private School in Tashkent",
       description:
         "East Star is a modern private school in Tashkent. Strong teachers, small classes, English and STEM focus. Leave a request and we'll get in touch.",
     },
@@ -316,10 +316,10 @@ export const dictionaries = {
     },
     hero: {
       badge: "Private school in Tashkent",
-      title: "East Star — where your child's future begins",
+      title: "East Star – where your child's future begins",
       subtitle:
         "Small classes, individual attention, and international-standard education. Modern curriculum for preschool (grade 0) and grades 1–4.",
-      tagline: "Great heritage — bright future",
+      tagline: "Great heritage – bright future",
       ctaPrimary: "Apply now",
       ctaSecondary: "Learn more",
       stats: [
@@ -360,7 +360,7 @@ export const dictionaries = {
       items: [
         {
           title: "Small classes",
-          desc: "Up to 20 students per class — every child gets attention.",
+          desc: "Up to 20 students per class – every child gets attention.",
         },
         {
           title: "Strong teachers",
@@ -368,7 +368,7 @@ export const dictionaries = {
         },
         {
           title: "English & Chinese",
-          desc: "Strong English and Chinese programs — native-speaker teachers and daily practice.",
+          desc: "Strong English and Chinese programs – native-speaker teachers and daily practice.",
         },
         {
           title: "Safe environment",
@@ -411,7 +411,7 @@ export const dictionaries = {
     },
     form: {
       eyebrow: "Application",
-      title: "Leave a request — we'll call you back",
+      title: "Leave a request and we'll call you back",
       subtitle:
         "Leave your details and we'll get in touch within 1 business day to answer all your questions.",
       nameLabel: "Name (yours or your child's)",
@@ -437,7 +437,7 @@ export const dictionaries = {
       privacy: "Your details will only be used to contact you.",
     },
     footer: {
-      tagline: "Great heritage — bright future.",
+      tagline: "Great heritage – bright future.",
       rights: "All rights reserved.",
       followUs: "Follow us",
     },

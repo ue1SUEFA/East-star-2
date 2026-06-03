@@ -110,7 +110,7 @@ export async function POST(req: Request) {
   const gradeLabel = grade === 0 ? "0 (дошкольный)" : String(grade);
 
   const text =
-    `<b>🎓 East Star — новая заявка</b>\n\n` +
+    `<b>🎓 East Star – новая заявка</b>\n\n` +
     `<b>Имя:</b> ${safeName}\n` +
     `<b>Телефон:</b> <a href="tel:${safePhone}">${safePhone}</a>\n` +
     `<b>Класс:</b> ${gradeLabel}\n` +

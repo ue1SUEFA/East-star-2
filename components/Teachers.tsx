@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Dictionary } from "@/lib/dictionaries";
 
 export function Teachers({ d }: { d: Dictionary }) {
@@ -7,15 +6,6 @@ export function Teachers({ d }: { d: Dictionary }) {
       id="teachers"
       className="relative overflow-hidden bg-brand-700 py-20 text-white"
     >
-      {/* Decorative oversized seal in the corner — barely visible */}
-      <Image
-        src="/logos/badge-icon-navy.jpg"
-        alt=""
-        aria-hidden="true"
-        width={360}
-        height={360}
-        className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 opacity-10"
-      />
       {/* Crimson hairline top */}
       <div className="absolute inset-x-0 top-0 h-[2px] bg-accent-700" />
 
