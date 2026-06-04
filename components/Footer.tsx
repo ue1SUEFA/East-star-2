@@ -27,11 +27,11 @@ export function Footer({ d }: { d: Dictionary }) {
           <div className="flex items-center gap-4">
             <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-full bg-white shadow-[0_8px_24px_-8px_rgba(0,0,0,0.3)]">
               <Image
-                src="/logos/wordmark.png"
+                src="/logos/badge-icon-light.jpg"
                 alt="East Star Private School"
                 width={120}
                 height={120}
-                className="h-full w-full object-contain"
+                className="h-full w-full object-cover"
               />
             </div>
             <div>
