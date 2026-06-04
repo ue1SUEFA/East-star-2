@@ -113,8 +113,14 @@ export function LeadForm({
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       if (typeof window !== "undefined" && typeof window.fbq === "function") {
+        // Standard "Lead" event — used by Meta to optimize ad delivery.
         window.fbq("track", "Lead", { content_name: "school_application" }, {
           eventID: eventId,
+        });
+        // Russian custom event for ad specialists — includes the chosen class.
+        window.fbq("trackCustom", "Заявка_отправлена", {
+          klass: Number(grade),
+          content_name: "school_application",
         });
       }
       setStatus("success");

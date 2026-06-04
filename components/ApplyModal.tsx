@@ -192,10 +192,11 @@ export function ApplyButton({
 }) {
   const { open } = useApplyModal();
   function handleClick() {
-    // Track the CTA click in Meta Pixel as a custom event, separate from the
-    // "Lead" event that fires on a successful form submit.
+    // Track the CTA click in Meta Pixel. Russian custom-event name so ad
+    // specialists see a readable label; distinct from the "Lead" event that
+    // fires on a successful form submit.
     if (typeof window !== "undefined" && typeof window.fbq === "function") {
-      window.fbq("trackCustom", "ApplyClick");
+      window.fbq("trackCustom", "Клик_Оставить_заявку");
     }
     open();
   }
