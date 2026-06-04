@@ -49,16 +49,20 @@ export function Navbar({ d, locale }: { d: Dictionary; locale: Locale }) {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-100 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <a href="#top" className="flex items-center gap-1">
-          <Image
-            src="/logos/badge-icon-navy.jpg"
-            alt="East Star"
-            width={44}
-            height={44}
-            priority
-            className="h-11 w-11 rounded-full"
-          />
-          <span className="flex flex-col leading-none">
+        <a href="#top" className="flex items-center gap-2">
+          {/* scale-[1.4] crops the white margin fully so only the navy circle
+              (with star + ornaments) shows — no white halo. */}
+          <span className="relative inline-flex h-11 w-11 flex-shrink-0 items-center justify-center self-center overflow-hidden rounded-full">
+            <Image
+              src="/logos/badge-icon-navy.jpg"
+              alt="East Star"
+              width={56}
+              height={56}
+              priority
+              className="h-full w-full scale-[1.4] object-cover"
+            />
+          </span>
+          <span className="flex flex-col self-center leading-none">
             <span className="font-display text-xl font-semibold tracking-wide text-brand-700">
               EAST STAR
             </span>

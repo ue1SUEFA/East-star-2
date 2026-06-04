@@ -19,7 +19,7 @@ export function Hero({ d }: { d: Dictionary }) {
               <span className="h-1.5 w-1.5 rounded-full bg-accent-700" />
               {d.hero.badge}
             </span>
-            <h1 className="mt-5 font-display text-3xl font-semibold leading-[1.1] tracking-tight text-brand-700 sm:text-4xl lg:text-5xl">
+            <h1 className="mt-5 font-display text-2xl font-semibold leading-[1.15] tracking-tight text-brand-700 sm:text-3xl lg:text-4xl">
               {d.hero.title}
             </h1>
             <div className="mt-4 h-[2px] w-20 bg-accent-700" />
@@ -71,20 +71,22 @@ export function Hero({ d }: { d: Dictionary }) {
 
           {/* Visual: the navy badge with the white star — clean and iconic */}
           <div className="relative flex items-center justify-center">
-            <div className="relative aspect-square w-full max-w-md">
+            <div className="relative aspect-square w-full max-w-xs sm:max-w-sm">
               {/* Soft navy glow behind the badge */}
               <div
                 aria-hidden="true"
                 className="absolute inset-4 rounded-full bg-brand-700/15 blur-2xl"
               />
-              <div className="relative h-full w-full overflow-hidden rounded-full bg-white shadow-[0_30px_60px_-20px_rgba(27,42,94,0.45)]">
+              {/* scale-[1.4] crops the source's white margin completely so
+                  only the navy circle fills the visible round area. */}
+              <div className="relative h-full w-full overflow-hidden rounded-full shadow-[0_30px_60px_-20px_rgba(27,42,94,0.45)]">
                 <Image
-                  src="/logos/badge.png"
+                  src="/logos/badge-icon-navy.jpg"
                   alt="East Star Private School"
                   fill
                   priority
-                  sizes="(min-width: 1024px) 440px, 80vw"
-                  className="object-contain"
+                  sizes="(min-width: 1024px) 380px, 70vw"
+                  className="scale-[1.4] object-cover"
                 />
               </div>
             </div>
