@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useId, useRef, useState } from "react";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
 import { formatUzPhone, isValidName, isValidUzPhone } from "@/lib/validation";
+import { GradeSelect } from "./GradeSelect";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -21,6 +22,7 @@ function makeEventId(): string {
 
 export function LeadForm({ d, locale }: { d: Dictionary; locale: Locale }) {
   const t = d.form;
+  const uid = useId(); // unique per instance → no duplicate field IDs on the page
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("+998 ");
   const [grade, setGrade] = useState<string>("");
@@ -161,13 +163,13 @@ export function LeadForm({ d, locale }: { d: Dictionary; locale: Locale }) {
 
       <div>
         <label
-          htmlFor="lead-name"
+          htmlFor={`${uid}-name`}
           className="mb-1.5 block text-sm font-semibold text-ink-900"
         >
           {t.nameLabel}
         </label>
         <input
-          id="lead-name"
+          id={`${uid}-name`}
           name="name"
           type="text"
           value={name}
@@ -189,13 +191,13 @@ export function LeadForm({ d, locale }: { d: Dictionary; locale: Locale }) {
 
       <div>
         <label
-          htmlFor="lead-phone"
+          htmlFor={`${uid}-phone`}
           className="mb-1.5 block text-sm font-semibold text-ink-900"
         >
           {t.phoneLabel}
         </label>
         <input
-          id="lead-phone"
+          id={`${uid}-phone`}
           name="phone"
           ref={phoneRef}
           type="tel"
@@ -222,31 +224,19 @@ export function LeadForm({ d, locale }: { d: Dictionary; locale: Locale }) {
 
       <div>
         <label
-          htmlFor="lead-grade"
+          htmlFor={`${uid}-grade`}
           className="mb-1.5 block text-sm font-semibold text-ink-900"
         >
           {t.gradeLabel}
         </label>
-        <select
-          id="lead-grade"
-          name="grade"
+        <GradeSelect
+          id={`${uid}-grade`}
           value={grade}
-          onChange={(e) => setGrade(e.target.value)}
-          required
-          className={
-            "w-full rounded-xl border bg-white px-4 py-3 text-base text-ink-900 outline-none transition focus:border-brand-700 focus:ring-2 focus:ring-brand-200 " +
-            (errors.grade ? "border-accent-500" : "border-slate-300")
-          }
-        >
-          <option value="" disabled>
-            {t.gradePlaceholder}
-          </option>
-          {Array.from({ length: 12 }, (_, i) => (
-            <option key={i} value={String(i)}>
-              {i === 0 ? t.gradeZero : String(i)}
-            </option>
-          ))}
-        </select>
+          onChange={setGrade}
+          placeholder={t.gradePlaceholder}
+          zeroLabel={t.gradeZero}
+          hasError={!!errors.grade}
+        />
         {errors.grade ? (
           <p className="mt-1 text-sm font-medium text-accent-700">
             {errors.grade}

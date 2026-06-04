@@ -8,6 +8,7 @@ import { WhyUs } from "@/components/WhyUs";
 import { Facilities } from "@/components/Facilities";
 import { Contact } from "@/components/Contact";
 import { ApplySection } from "@/components/ApplySection";
+import { ApplyModalProvider } from "@/components/ApplyModal";
 import { Footer } from "@/components/Footer";
 
 export default async function Page({
@@ -21,7 +22,7 @@ export default async function Page({
   const d = getDictionary(locale);
 
   return (
-    <>
+    <ApplyModalProvider d={d} locale={locale}>
       <Navbar d={d} locale={locale} />
       <main>
         <Hero d={d} />
@@ -33,6 +34,6 @@ export default async function Page({
         <ApplySection d={d} locale={locale} />
       </main>
       <Footer d={d} />
-    </>
+    </ApplyModalProvider>
   );
 }

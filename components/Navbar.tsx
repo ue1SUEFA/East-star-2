@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { PhoneDropdown } from "./PhoneDropdown";
+import { ApplyButton } from "./ApplyModal";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
 
 // Quick-action icon buttons in the navbar right side:
@@ -20,7 +21,7 @@ function ContactIconButtons({ d }: { d: Dictionary }) {
     >
       <svg
         viewBox="0 0 24 24"
-        className="h-4 w-4"
+        className="h-4 w-4 -translate-x-px"
         fill="currentColor"
         aria-hidden="true"
       >
@@ -30,7 +31,7 @@ function ContactIconButtons({ d }: { d: Dictionary }) {
   );
 
   return (
-    <div className="flex items-center gap-1.5">
+    <div className="flex items-center gap-2">
       {tgHref ? tgButton : null}
       <PhoneDropdown phones={d.contact.phones} />
     </div>
@@ -50,16 +51,15 @@ export function Navbar({ d, locale }: { d: Dictionary; locale: Locale }) {
     <header className="sticky top-0 z-40 border-b border-slate-100 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <a href="#top" className="flex items-center gap-2">
-          {/* scale-[1.4] crops the white margin fully so only the navy circle
-              (with star + ornaments) shows — no white halo. */}
-          <span className="relative inline-flex h-11 w-11 flex-shrink-0 items-center justify-center self-center overflow-hidden rounded-full">
+          {/* Circular badge PNG (transparent corners) — sits edge-to-edge. */}
+          <span className="relative inline-flex h-11 w-11 flex-shrink-0 items-center justify-center self-center">
             <Image
-              src="/logos/badge-icon-navy.jpg"
+              src="/logos/badge.png"
               alt="East Star"
               width={56}
               height={56}
               priority
-              className="h-full w-full scale-[1.4] object-cover"
+              className="h-full w-full object-contain"
             />
           </span>
           <span className="flex flex-col self-center leading-none">
@@ -87,12 +87,9 @@ export function Navbar({ d, locale }: { d: Dictionary; locale: Locale }) {
         <div className="flex items-center gap-2">
           <LanguageSwitcher current={locale} />
           <ContactIconButtons d={d} />
-          <a
-            href="#apply"
-            className="hidden whitespace-nowrap rounded-full bg-brand-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-800 sm:inline-flex"
-          >
+          <ApplyButton className="hidden h-9 items-center whitespace-nowrap rounded-full bg-brand-700 px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-800 sm:inline-flex">
             {d.nav.cta}
-          </a>
+          </ApplyButton>
         </div>
       </div>
     </header>

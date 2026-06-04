@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Dictionary } from "@/lib/dictionaries";
+import { ApplyButton } from "./ApplyModal";
 
 export function Hero({ d }: { d: Dictionary }) {
   return (
@@ -28,12 +29,9 @@ export function Hero({ d }: { d: Dictionary }) {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#apply"
-                className="rounded-full bg-brand-700 px-6 py-3 text-base font-semibold text-white shadow-md transition hover:bg-brand-800"
-              >
+              <ApplyButton className="rounded-full bg-brand-700 px-6 py-3 text-base font-semibold text-white shadow-md transition hover:bg-brand-800">
                 {d.hero.ctaPrimary}
-              </a>
+              </ApplyButton>
               <a
                 href="#about"
                 className="rounded-full border border-brand-700/30 bg-white px-6 py-3 text-base font-semibold text-brand-700 transition hover:bg-brand-50"
@@ -69,26 +67,23 @@ export function Hero({ d }: { d: Dictionary }) {
             </dl>
           </div>
 
-          {/* Visual: the navy badge with the white star — clean and iconic */}
+          {/* Visual: the navy badge with the white star — clean and iconic.
+              Kept compact so it doesn't dominate the hero. */}
           <div className="relative flex items-center justify-center">
-            <div className="relative aspect-square w-full max-w-xs sm:max-w-sm">
+            <div className="relative aspect-square w-full max-w-[260px] sm:max-w-[320px]">
               {/* Soft navy glow behind the badge */}
               <div
                 aria-hidden="true"
-                className="absolute inset-4 rounded-full bg-brand-700/15 blur-2xl"
+                className="absolute inset-6 rounded-full bg-brand-700/15 blur-2xl"
               />
-              {/* scale-[1.4] crops the source's white margin completely so
-                  only the navy circle fills the visible round area. */}
-              <div className="relative h-full w-full overflow-hidden rounded-full shadow-[0_30px_60px_-20px_rgba(27,42,94,0.45)]">
-                <Image
-                  src="/logos/badge-icon-navy.jpg"
-                  alt="East Star Private School"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 380px, 70vw"
-                  className="scale-[1.4] object-cover"
-                />
-              </div>
+              <Image
+                src="/logos/badge.png"
+                alt="East Star Private School"
+                fill
+                priority
+                sizes="(min-width: 640px) 320px, 260px"
+                className="object-contain drop-shadow-[0_24px_48px_rgba(27,42,94,0.35)]"
+              />
             </div>
             <div className="absolute -bottom-4 -right-2 hidden rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-lg sm:block">
               <div className="text-[10px] font-semibold uppercase tracking-widest text-accent-700">
