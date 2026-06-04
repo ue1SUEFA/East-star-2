@@ -191,8 +191,16 @@ export function ApplyButton({
   children: React.ReactNode;
 }) {
   const { open } = useApplyModal();
+  function handleClick() {
+    // Track the CTA click in Meta Pixel as a custom event, separate from the
+    // "Lead" event that fires on a successful form submit.
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("trackCustom", "ApplyClick");
+    }
+    open();
+  }
   return (
-    <button type="button" onClick={open} className={className}>
+    <button type="button" onClick={handleClick} className={className}>
       {children}
     </button>
   );
