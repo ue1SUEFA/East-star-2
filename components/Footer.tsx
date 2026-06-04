@@ -25,7 +25,7 @@ export function Footer({ d }: { d: Dictionary }) {
       <div className="mx-auto max-w-6xl px-4 py-12">
         <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <div className="flex items-center gap-4">
-            <div className="h-20 w-20 flex-shrink-0">
+            <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-full bg-white shadow-[0_8px_24px_-8px_rgba(0,0,0,0.3)]">
               <Image
                 src="/logos/wordmark.png"
                 alt="East Star Private School"

@@ -77,7 +77,7 @@ export function Hero({ d }: { d: Dictionary }) {
                 aria-hidden="true"
                 className="absolute inset-4 rounded-full bg-brand-700/15 blur-2xl"
               />
-              <div className="relative h-full w-full">
+              <div className="relative h-full w-full overflow-hidden rounded-full bg-white shadow-[0_30px_60px_-20px_rgba(27,42,94,0.45)]">
                 <Image
                   src="/logos/badge.png"
                   alt="East Star Private School"
