@@ -77,13 +77,9 @@ export function Hero({ d }: { d: Dictionary }) {
                 aria-hidden="true"
                 className="absolute inset-4 rounded-full bg-brand-700/15 blur-2xl"
               />
-              {/* Switched to badge-icon-light.jpg — same brand seal but on a
-                  white background with the double ring (navy + crimson) and
-                  the navy star badge perfectly centered. No transform hacks
-                  needed; the source is already balanced. */}
-              <div className="relative h-full w-full overflow-hidden rounded-full bg-white shadow-[0_30px_60px_-20px_rgba(27,42,94,0.45)]">
+              <div className="relative h-full w-full">
                 <Image
-                  src="/logos/badge-icon-light.jpg"
+                  src="/logos/badge.png"
                   alt="East Star Private School"
                   fill
                   priority
