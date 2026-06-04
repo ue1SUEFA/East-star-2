@@ -51,7 +51,7 @@ export function Navbar({ d, locale }: { d: Dictionary; locale: Locale }) {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <a href="#top" className="flex items-center gap-1">
           <Image
-            src="/logos/badge.png"
+            src="/logos/badge-icon-navy.jpg"
             alt="East Star"
             width={44}
             height={44}
