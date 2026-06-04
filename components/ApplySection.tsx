@@ -18,10 +18,17 @@ export function ApplySection({
 
       <div className="relative mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-2 lg:items-center">
         <div className="text-white">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent-300">
-            {d.form.eyebrow}
-          </span>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          {d.form.eyebrow ? (
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent-300">
+              {d.form.eyebrow}
+            </span>
+          ) : null}
+          <h2
+            className={
+              "font-display text-3xl font-semibold tracking-tight sm:text-4xl " +
+              (d.form.eyebrow ? "mt-3" : "")
+            }
+          >
             {d.form.title}
           </h2>
           <div className="mt-5 h-[2px] w-16 bg-accent-500" />

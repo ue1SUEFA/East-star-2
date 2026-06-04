@@ -5,7 +5,6 @@ import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Programs } from "@/components/Programs";
 import { WhyUs } from "@/components/WhyUs";
-import { Teachers } from "@/components/Teachers";
 import { Facilities } from "@/components/Facilities";
 import { Contact } from "@/components/Contact";
 import { ApplySection } from "@/components/ApplySection";
@@ -29,7 +28,6 @@ export default async function Page({
         <About d={d} />
         <Programs d={d} />
         <WhyUs d={d} />
-        <Teachers d={d} />
         <Facilities d={d} />
         <Contact d={d} />
         <ApplySection d={d} locale={locale} />

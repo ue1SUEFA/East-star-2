@@ -17,7 +17,7 @@ export const dictionaries = {
     nav: {
       about: "Maktab haqida",
       programs: "Dasturlar",
-      whyUs: "Nega bizni tanlash kerak",
+      whyUs: "Afzalliklar",
       teachers: "O'qituvchilar",
       facilities: "Sharoit",
       contact: "Aloqa",
@@ -25,24 +25,24 @@ export const dictionaries = {
     },
     hero: {
       badge: "Toshkentdagi xususiy maktab",
-      title: "East Star – bolangizning kelajagi shu yerdan boshlanadi",
+      title: "EAST STAR Private School – bolangizning kelajagi shu yerdan boshlanadi",
       subtitle:
-        "Kichik sinflar, individual yondashuv va xalqaro standartdagi ta'lim. Maktabgacha (0-sinf) va 1–4-sinflar uchun zamonaviy o'quv dasturi.",
+        "Kichik sinflar, individual yondashuv va valdorf ta'lim metodikasi. Nol va boshlang'ich sinflar uchun zamonaviy va sifatli o'quv dasturi.",
       tagline: "Buyuk o'tmish – yorqin kelajak",
       ctaPrimary: "Ariza qoldirish",
       ctaSecondary: "Ko'proq bilish",
       stats: [
-        { value: "12+", label: "Tajribali o'qituvchi" },
+        { value: "Valdorf", label: "O'qitish metodikasi" },
         { value: "20", label: "Sinfdagi o'quvchilar soni" },
         { value: "3", label: "O'quv tili" },
       ],
     },
     about: {
       eyebrow: "Maktab haqida",
-      title: "Bilim, tarbiya va xalqaro tafakkur",
+      title: "Bilim, g'amxo'rlik va har bir bolaga e'tibor",
       body: [
-        "East Star – Toshkentda joylashgan zamonaviy xususiy maktab. Biz har bir bolaga alohida e'tibor qaratamiz va uning iste'dodini ochishga yordam beramiz.",
-        "Bizning maqsad – o'quvchilarni nafaqat imtihonlarga, balki hayotga ham tayyorlash. Shuning uchun darslar tanqidiy fikrlash, jamoa bo'lib ishlash va ijodiy yondashuvga asoslangan.",
+        "East Star – Toshkentdagi xususiy maktab bo'lib, bolalar bu yerda qulay va qo'llab-quvvatlovchi muhitda mustahkam bilim asoslarini oladilar.",
+        "Bizning maqsadimiz – bolalarda mustaqillik va o'z imkoniyatlariga ishonchni shakllantirish. Shu sababli darslar tanqidiy fikrlash, jamoa bo'lib ishlash va ijodiy yondashuvga asoslangan.",
       ],
     },
     programs: {
@@ -59,37 +59,37 @@ export const dictionaries = {
         },
         {
           title: "Qo'shimcha to'garaklar",
-          desc: "Robototexnika, shaxmat, futbol, rasm, musiqa va dramaturgiya.",
+          desc: "Robototexnika, shaxmat, futbol, rasm va musiqa.",
         },
       ],
     },
     whyUs: {
-      eyebrow: "Nega East Star",
-      title: "Ota-onalar bizni nima uchun tanlaydi",
+      eyebrow: "East Star",
+      title: "Bizning afzalliklarimiz",
       items: [
         {
+          title: "Hamyonbop ta'lim narxi",
+          desc: "Qulay narxda sifatli ta'lim.",
+        },
+        {
+          title: "Tajribali va e'tiborli pedagoglar",
+          desc: "O'qituvchilarimiz har bir bolaning xususiyatlari va o'rganish suratini hisobga olib, dasturni ishonch bilan o'zlashtirishga yordam beradi.",
+        },
+        {
+          title: "Bilingual ta'lim",
+          desc: "Ingliz va xitoy tillari bolalarga dunyoqarashni kengaytirishga va dastlabki maktab yillaridanoq yangi imkoniyatlar bilan tanishishga yordam beradi.",
+        },
+        {
+          title: "Zamonaviy ta'lim muhiti",
+          desc: "Yorug' va jihozlangan sinflar o'qish, ijodkorlik va rivojlanish uchun qulay sharoit yaratadi.",
+        },
+        {
           title: "Kichik sinflar",
-          desc: "Bir sinfda 20 nafargacha o'quvchi – har bir bolaga e'tibor qaratiladi.",
+          desc: "Har bir sinfda 20 nafargacha o'quvchi o'qiydi, bu har bir bolaga ko'proq e'tibor berish imkonini beradi.",
         },
         {
-          title: "Kuchli o'qituvchilar",
-          desc: "Xalqaro sertifikatlangan, tajribali pedagoglar.",
-        },
-        {
-          title: "Ingliz va xitoy tillari",
-          desc: "Ingliz va xitoy tillari kuchaytirilgan dasturda – native speaker o'qituvchilar va kundalik amaliyot.",
-        },
-        {
-          title: "Xavfsiz muhit",
-          desc: "Videokuzatuv, ovqatlanish nazorati va malakali xodimlar.",
-        },
-        {
-          title: "Zamonaviy texnologiya",
-          desc: "Interaktiv doskalar, kompyuter sinflari va STEM laboratoriya.",
-        },
-        {
-          title: "Ota-onalar bilan aloqa",
-          desc: "Har hafta hisobotlar va shaxsiy uchrashuvlar.",
+          title: "Ota-onalar bilan doimiy aloqa",
+          desc: "Haftalik hisobotlar va shaxsiy uchrashuvlar.",
         },
       ],
     },
@@ -103,24 +103,24 @@ export const dictionaries = {
       title: "Zamonaviy va qulay maktab binosi",
       items: [
         "Yorug' va keng sinflar",
-        "STEM va kompyuter laboratoriyalari",
-        "Sport zali va futbol maydoni",
-        "Kutubxona va o'qish zali",
+        "Futbol maydoni va bolalar maydonchasi",
         "Issiq ovqatlanish (3 mahal)",
-        "Tibbiy xona va doimiy hamshira",
+        "Sinflarda multimedia jihozlari",
+        "Umumiy hudud maydoni 3300 m²",
       ],
     },
     contact: {
       eyebrow: "Aloqa",
-      title: "Bizga keling yoki qo'ng'iroq qiling",
+      title: "Biz bilan bog'laning",
       address: "Toshkent, Yangi Hayot tumani, Navro'z ko'chasi, 19",
       phones: ["+998 90 812 40 04", "+998 97 137 07 76"],
-      email: "info@eaststar.uz",
-      hours: "Dushanba–Shanba, 08:00–18:00",
+      telegram: "https://t.me/eaststar_privateschool",
+      email: "eaststarprivateschool@yandex.com",
+      hours: "Dushanba–Juma, 08:30–17:30",
     },
     form: {
-      eyebrow: "Ariza",
-      title: "Ariza qoldiring va biz qo'ng'iroq qilamiz",
+      eyebrow: "",
+      title: "Ariza qoldiring, va biz siz bilan bog'lanamiz",
       subtitle:
         "Ma'lumotlaringizni qoldiring, biz 1 ish kuni ichida siz bilan bog'lanamiz va savollaringizga javob beramiz.",
       nameLabel: "Ism (siz yoki bolangizning ismi)",
@@ -170,24 +170,24 @@ export const dictionaries = {
     },
     hero: {
       badge: "Частная школа в Ташкенте",
-      title: "East Star – будущее вашего ребёнка начинается здесь",
+      title: "EAST STAR Private School – будущее вашего ребёнка начинается здесь",
       subtitle:
-        "Маленькие классы, индивидуальный подход и образование международного уровня. Современная программа для дошкольного (0 класс) и 1–4 классов.",
+        "Маленькие классы, индивидуальный подход и вальдорфская методика обучения. Современная и качественная программа обучения для нулевого и начальных классов.",
       tagline: "Великое прошлое – Яркое будущее",
       ctaPrimary: "Оставить заявку",
       ctaSecondary: "Узнать больше",
       stats: [
-        { value: "12+", label: "Опытных учителей" },
+        { value: "Waldorf", label: "Методика обучения" },
         { value: "20", label: "Учеников в классе" },
         { value: "3", label: "Языка обучения" },
       ],
     },
     about: {
       eyebrow: "О школе",
-      title: "Знания, воспитание и международное мышление",
+      title: "Знания, забота и внимание к каждому ребёнку",
       body: [
-        "East Star – современная частная школа в Ташкенте. Мы уделяем внимание каждому ребёнку и помогаем раскрыть его таланты.",
-        "Наша цель – подготовить детей не только к экзаменам, но и к жизни. Поэтому уроки строятся на критическом мышлении, командной работе и творческом подходе.",
+        "East Star – частная школа в Ташкенте, где дети получают прочную базу знаний в комфортной и поддерживающей среде.",
+        "Наша цель – привить детям самостоятельность и уверенность в своих возможностях. Поэтому уроки строятся на критическом мышлении, командной работе и творческом подходе.",
       ],
     },
     programs: {
@@ -204,36 +204,36 @@ export const dictionaries = {
         },
         {
           title: "Доп. кружки",
-          desc: "Робототехника, шахматы, футбол, рисование, музыка и театр.",
+          desc: "Робототехника, шахматы, футбол, рисование и музыка.",
         },
       ],
     },
     whyUs: {
-      eyebrow: "Почему East Star",
-      title: "Почему родители выбирают нас",
+      eyebrow: "East Star",
+      title: "Наши преимущества",
       items: [
         {
-          title: "Маленькие классы",
-          desc: "До 20 учеников в классе – внимание каждому ребёнку.",
+          title: "Доступная стоимость обучения",
+          desc: "Качественное образование по комфортной цене.",
         },
         {
-          title: "Сильные учителя",
-          desc: "Опытные педагоги с международными сертификатами.",
+          title: "Опытные и внимательные педагоги",
+          desc: "Наши учителя помогают каждому ребёнку уверенно осваивать программу, учитывая его особенности и темп обучения.",
         },
         {
-          title: "Английский и китайский",
-          desc: "Усиленные английский и китайский – носители языка и ежедневная практика.",
+          title: "Билингвальное обучение",
+          desc: "Английский и китайский языки помогают детям расширять кругозор и знакомиться с новыми возможностями с первых школьных лет.",
         },
         {
-          title: "Безопасная среда",
-          desc: "Видеонаблюдение, контроль питания и квалифицированный персонал.",
+          title: "Современная образовательная среда",
+          desc: "Светлые и оснащённые классы создают комфортные условия для учёбы, творчества и развития.",
         },
         {
-          title: "Современные технологии",
-          desc: "Интерактивные доски, компьютерные классы и STEM-лаборатория.",
+          title: "Небольшие классы",
+          desc: "В каждом классе обучается до 20 учеников, что позволяет уделять больше внимания каждому ребёнку.",
         },
         {
-          title: "Связь с родителями",
+          title: "Постоянная коммуникация с родителями",
           desc: "Еженедельные отчёты и личные встречи.",
         },
       ],
@@ -248,24 +248,24 @@ export const dictionaries = {
       title: "Современное и комфортное здание школы",
       items: [
         "Светлые и просторные классы",
-        "STEM и компьютерные лаборатории",
-        "Спортивный зал и футбольное поле",
-        "Библиотека и читальный зал",
+        "Футбольное поле и детская площадка",
         "Горячее питание (3 раза в день)",
-        "Медицинский кабинет и постоянная медсестра",
+        "Мультимедийное оснащение классов",
+        "Общая площадь территории 3300 м²",
       ],
     },
     contact: {
       eyebrow: "Контакты",
-      title: "Приходите или позвоните нам",
+      title: "Обратная связь",
       address: "г. Ташкент, Янгихаётский район, ул. Навруз, 19",
       phones: ["+998 90 812 40 04", "+998 97 137 07 76"],
-      email: "info@eaststar.uz",
-      hours: "Пн–Сб, 08:00–18:00",
+      telegram: "https://t.me/eaststar_privateschool",
+      email: "eaststarprivateschool@yandex.com",
+      hours: "Пн–Пт, 08:30–17:30",
     },
     form: {
-      eyebrow: "Заявка",
-      title: "Оставьте заявку и мы вам перезвоним",
+      eyebrow: "",
+      title: "Оставьте заявку, и мы с вами свяжемся",
       subtitle:
         "Оставьте свои данные, и мы свяжемся с вами в течение 1 рабочего дня и ответим на все вопросы.",
       nameLabel: "Имя (ваше или ребёнка)",
@@ -316,24 +316,24 @@ export const dictionaries = {
     },
     hero: {
       badge: "Private school in Tashkent",
-      title: "East Star – where your child's future begins",
+      title: "EAST STAR Private School – where your child's future begins",
       subtitle:
-        "Small classes, individual attention, and international-standard education. Modern curriculum for preschool (grade 0) and grades 1–4.",
+        "Small classes, individual attention, and the Waldorf teaching methodology. A modern, high-quality curriculum for preschool and primary grades.",
       tagline: "Great heritage – bright future",
       ctaPrimary: "Apply now",
       ctaSecondary: "Learn more",
       stats: [
-        { value: "12+", label: "Experienced teachers" },
+        { value: "Waldorf", label: "Teaching methodology" },
         { value: "20", label: "Students per class" },
         { value: "3", label: "Languages of study" },
       ],
     },
     about: {
       eyebrow: "About the school",
-      title: "Knowledge, character, and global thinking",
+      title: "Knowledge, care, and attention to every child",
       body: [
-        "East Star is a modern private school in Tashkent. We give every child personal attention and help them discover their talents.",
-        "Our goal is to prepare students not just for exams, but for life. That's why our lessons are built around critical thinking, teamwork, and creativity.",
+        "East Star is a private school in Tashkent where children build a strong foundation of knowledge in a comfortable, supportive environment.",
+        "Our goal is to nurture independence and self-confidence in every child. That's why our lessons are built around critical thinking, teamwork, and creativity.",
       ],
     },
     programs: {
@@ -350,36 +350,36 @@ export const dictionaries = {
         },
         {
           title: "After-school clubs",
-          desc: "Robotics, chess, football, art, music, and drama.",
+          desc: "Robotics, chess, football, art, and music.",
         },
       ],
     },
     whyUs: {
-      eyebrow: "Why East Star",
-      title: "Why parents choose us",
+      eyebrow: "East Star",
+      title: "Our advantages",
       items: [
         {
+          title: "Affordable tuition",
+          desc: "High-quality education at a comfortable price.",
+        },
+        {
+          title: "Experienced, caring teachers",
+          desc: "Our teachers help every child confidently master the curriculum, taking their individual pace and needs into account.",
+        },
+        {
+          title: "Bilingual program",
+          desc: "English and Chinese help children broaden their horizons and discover new opportunities from their very first school years.",
+        },
+        {
+          title: "Modern learning environment",
+          desc: "Bright, well-equipped classrooms create comfortable conditions for study, creativity, and growth.",
+        },
+        {
           title: "Small classes",
-          desc: "Up to 20 students per class – every child gets attention.",
+          desc: "Up to 20 students per class – so every child gets more individual attention.",
         },
         {
-          title: "Strong teachers",
-          desc: "Experienced educators with international certifications.",
-        },
-        {
-          title: "English & Chinese",
-          desc: "Strong English and Chinese programs – native-speaker teachers and daily practice.",
-        },
-        {
-          title: "Safe environment",
-          desc: "CCTV, supervised meals, and qualified staff.",
-        },
-        {
-          title: "Modern technology",
-          desc: "Interactive boards, computer labs, and a STEM lab.",
-        },
-        {
-          title: "Parent communication",
+          title: "Ongoing parent communication",
           desc: "Weekly reports and personal meetings.",
         },
       ],
@@ -394,24 +394,24 @@ export const dictionaries = {
       title: "A modern, comfortable school building",
       items: [
         "Bright, spacious classrooms",
-        "STEM and computer labs",
-        "Gym and football field",
-        "Library and reading room",
+        "Football field and children's playground",
         "Hot meals (3 times a day)",
-        "Medical room with on-site nurse",
+        "Multimedia-equipped classrooms",
+        "Total grounds area of 3,300 m²",
       ],
     },
     contact: {
       eyebrow: "Contact",
-      title: "Visit us or give us a call",
+      title: "Get in touch",
       address: "Tashkent, Yangi Hayot district, Navruz street, 19",
       phones: ["+998 90 812 40 04", "+998 97 137 07 76"],
-      email: "info@eaststar.uz",
-      hours: "Mon–Sat, 08:00–18:00",
+      telegram: "https://t.me/eaststar_privateschool",
+      email: "eaststarprivateschool@yandex.com",
+      hours: "Mon–Fri, 08:30–17:30",
     },
     form: {
-      eyebrow: "Application",
-      title: "Leave a request and we'll call you back",
+      eyebrow: "",
+      title: "Leave a request and we'll get in touch with you",
       subtitle:
         "Leave your details and we'll get in touch within 1 business day to answer all your questions.",
       nameLabel: "Name (yours or your child's)",

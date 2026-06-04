@@ -19,7 +19,7 @@ export function Hero({ d }: { d: Dictionary }) {
               <span className="h-1.5 w-1.5 rounded-full bg-accent-700" />
               {d.hero.badge}
             </span>
-            <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-brand-700 sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 font-display text-3xl font-semibold leading-[1.1] tracking-tight text-brand-700 sm:text-4xl lg:text-5xl">
               {d.hero.title}
             </h1>
             <div className="mt-4 h-[2px] w-20 bg-accent-700" />
@@ -43,19 +43,29 @@ export function Hero({ d }: { d: Dictionary }) {
             </div>
 
             <dl className="mt-10 grid max-w-md grid-cols-3 gap-4">
-              {d.hero.stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="rounded-2xl border border-slate-200 bg-white p-4 text-center"
-                >
-                  <dt className="font-display text-3xl font-semibold text-brand-700">
-                    {s.value}
-                  </dt>
-                  <dd className="mt-1 text-xs font-medium leading-tight text-ink-500">
-                    {s.label}
-                  </dd>
-                </div>
-              ))}
+              {d.hero.stats.map((s) => {
+                // Numeric values keep the big display size for impact;
+                // text values (e.g. "Waldorf") shrink so they fit the card.
+                const isNumeric = /^\d/.test(s.value);
+                return (
+                  <div
+                    key={s.label}
+                    className="rounded-2xl border border-slate-200 bg-white p-4 text-center"
+                  >
+                    <dt
+                      className={
+                        "font-display font-semibold leading-none text-brand-700 " +
+                        (isNumeric ? "text-3xl" : "text-xl")
+                      }
+                    >
+                      {s.value}
+                    </dt>
+                    <dd className="mt-1 text-xs font-medium leading-tight text-ink-500">
+                      {s.label}
+                    </dd>
+                  </div>
+                );
+              })}
             </dl>
           </div>
 
@@ -67,16 +77,22 @@ export function Hero({ d }: { d: Dictionary }) {
                 aria-hidden="true"
                 className="absolute inset-4 rounded-full bg-brand-700/15 blur-2xl"
               />
-              <Image
-                src="/logos/badge-icon-navy.jpg"
-                alt="East Star Private School"
-                fill
-                priority
-                sizes="(min-width: 1024px) 440px, 80vw"
-                className="relative rounded-full object-contain drop-shadow-[0_30px_60px_rgba(27,42,94,0.35)]"
-              />
+              {/* Switched to badge-icon-light.jpg — same brand seal but on a
+                  white background with the double ring (navy + crimson) and
+                  the navy star badge perfectly centered. No transform hacks
+                  needed; the source is already balanced. */}
+              <div className="relative h-full w-full overflow-hidden rounded-full bg-white shadow-[0_30px_60px_-20px_rgba(27,42,94,0.45)]">
+                <Image
+                  src="/logos/badge-icon-light.jpg"
+                  alt="East Star Private School"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 440px, 80vw"
+                  className="object-contain"
+                />
+              </div>
             </div>
-            <div className="absolute -bottom-4 -left-2 hidden rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-lg sm:block">
+            <div className="absolute -bottom-4 -right-2 hidden rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-lg sm:block">
               <div className="text-[10px] font-semibold uppercase tracking-widest text-accent-700">
                 est. 2025
               </div>
