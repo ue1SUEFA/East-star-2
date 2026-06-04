@@ -20,7 +20,16 @@ function makeEventId(): string {
   return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 }
 
-export function LeadForm({ d, locale }: { d: Dictionary; locale: Locale }) {
+export function LeadForm({
+  d,
+  locale,
+  onSuccess,
+}: {
+  d: Dictionary;
+  locale: Locale;
+  /** Called after a lead is submitted successfully (e.g. to close the modal). */
+  onSuccess?: () => void;
+}) {
   const t = d.form;
   const uid = useId(); // unique per instance → no duplicate field IDs on the page
   const [name, setName] = useState("");
@@ -112,6 +121,7 @@ export function LeadForm({ d, locale }: { d: Dictionary; locale: Locale }) {
       setName("");
       setPhone("+998 ");
       setGrade("");
+      onSuccess?.();
     } catch {
       setStatus("error");
     }
