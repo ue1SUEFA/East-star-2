@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { isValidName, isValidUzPhone, normalizePhone } from "@/lib/validation";
+import { sendLeadToCapi } from "@/lib/meta-capi";
 
 export const runtime = "nodejs";
 
@@ -32,6 +33,19 @@ function getIp(req: Request): string {
   return req.headers.get("x-real-ip") ?? "unknown";
 }
 
+function getCookie(req: Request, name: string): string | undefined {
+  const header = req.headers.get("cookie");
+  if (!header) return undefined;
+  for (const part of header.split(";")) {
+    const eq = part.indexOf("=");
+    if (eq === -1) continue;
+    if (part.slice(0, eq).trim() === name) {
+      return decodeURIComponent(part.slice(eq + 1).trim());
+    }
+  }
+  return undefined;
+}
+
 export async function POST(req: Request) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -54,11 +68,12 @@ export async function POST(req: Request) {
     );
   }
 
-  const { name, phone, grade, website } = (body ?? {}) as {
+  const { name, phone, grade, website, eventId } = (body ?? {}) as {
     name?: unknown;
     phone?: unknown;
     grade?: unknown;
     website?: unknown;
+    eventId?: unknown;
   };
 
   // Honeypot: real humans never fill this hidden field. Pretend success so bots
@@ -138,6 +153,25 @@ export async function POST(req: Request) {
         { ok: false, error: "Telegram delivery failed" },
         { status: 502 },
       );
+    }
+
+    // Mirror the browser pixel "Lead" event server-side (Conversions API).
+    // Best-effort: a CAPI failure must not affect the lead the school receives.
+    // Shares `eventId` with the browser event so Meta deduplicates the pair.
+    const capi = await sendLeadToCapi({
+      eventId:
+        typeof eventId === "string" && eventId ? eventId : crypto.randomUUID(),
+      phone: normalizePhone(phone),
+      name: name.trim(),
+      grade,
+      ip: ip !== "unknown" ? ip : undefined,
+      userAgent: req.headers.get("user-agent") ?? undefined,
+      fbp: getCookie(req, "_fbp"),
+      fbc: getCookie(req, "_fbc"),
+      eventSourceUrl: req.headers.get("referer") ?? undefined,
+    });
+    if ("ok" in capi && capi.ok === false) {
+      console.error("[lead] CAPI error:", capi.status, capi.error);
     }
 
     return NextResponse.json({ ok: true });

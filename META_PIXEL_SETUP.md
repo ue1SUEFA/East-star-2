@@ -73,18 +73,20 @@ Two ways:
 
 - In Meta Ads Manager, when you create a campaign with the **Leads** objective, select this Pixel as the conversion source. Meta will then optimize delivery toward people likely to fill the form.
 
-### Conversions API (recommended next step)
+### Conversions API (already built in — just add the token)
 
-The browser-side Pixel is good, but iOS Safari and ad blockers prevent maybe 30-40% of events from being reported. The **Conversions API (CAPI)** is a server-side backup that fires the same event from your own server, so Meta gets reliable data either way.
+The browser-side Pixel is good, but iOS Safari and ad blockers prevent maybe 30-40% of events from being reported. The **Conversions API (CAPI)** is a server-side backup that fires the same `Lead` event from our own server, so Meta gets reliable data either way.
 
-To enable it later:
+This is **already implemented** in the site (`lib/meta-capi.ts`, called from `app/api/lead/route.ts`). The browser and server events share the same `eventId`, so Meta deduplicates them — a normal submit is counted exactly once. It stays dormant until you provide a token:
 
-1. In Events Manager → your Pixel → **Settings** → **Conversions API** → **Generate access token**
-2. Add to `.env.local`:
+1. In Events Manager → your Pixel → **Settings** → **Conversions API** → **Generate access token**.
+2. Add the token as an environment variable — in **Vercel → Project → Settings → Environment Variables** (and in local `.env.local` for testing):
    ```
    META_CAPI_ACCESS_TOKEN=EAAxxxxxxxxxxxxxxxxxxx
    ```
-3. Ask your developer to wire up the server-side send in `app/api/lead/route.ts`. The website already passes an `eventId` from browser to server so the two events deduplicate cleanly.
+3. Redeploy. Done — no code changes needed.
+
+**To verify CAPI specifically:** Events Manager → **Test events** tab gives you a *Test Event Code*. Temporarily set it as `META_CAPI_TEST_EVENT_CODE=TESTxxxx`, redeploy, submit the form once, and you'll see the **server** `Lead` event appear in that tab (marked "Server"). Remove the variable for production. In the normal **Data sources** view, a healthy setup shows the `Lead` event with both "Browser" and "Server" badges and a high *Event Match Quality* score (we send hashed phone + name, IP, user-agent, and the `_fbp`/`_fbc` cookies).
 
 ### Audiences for retargeting
 
