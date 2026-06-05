@@ -68,10 +68,11 @@ export async function POST(req: Request) {
     );
   }
 
-  const { name, phone, grade, website, eventId } = (body ?? {}) as {
+  const { name, phone, grade, district, website, eventId } = (body ?? {}) as {
     name?: unknown;
     phone?: unknown;
     grade?: unknown;
+    district?: unknown;
     website?: unknown;
     eventId?: unknown;
   };
@@ -108,6 +109,14 @@ export async function POST(req: Request) {
     );
   }
 
+  // Geo confirmation — required gate, must be explicitly true.
+  if (district !== true) {
+    return NextResponse.json(
+      { ok: false, error: "District not confirmed" },
+      { status: 400 },
+    );
+  }
+
   const ip = getIp(req);
   if (!rateLimit(ip)) {
     return NextResponse.json(
@@ -129,6 +138,7 @@ export async function POST(req: Request) {
     `<b>Имя:</b> ${safeName}\n` +
     `<b>Телефон:</b> <a href="tel:${safePhone}">${safePhone}</a>\n` +
     `<b>Класс:</b> ${gradeLabel}\n` +
+    `<b>Район:</b> Ташкент (Сергели / Янгихаёт) ✅\n` +
     `<b>Время (Ташкент):</b> ${ts}`;
 
   try {

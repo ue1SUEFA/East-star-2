@@ -130,6 +130,8 @@ export const dictionaries = {
       gradeLabel: "Bola qaysi sinfga o'tmoqda (0–11)",
       gradePlaceholder: "Sinfni tanlang",
       gradeZero: "0 (maktabgacha)",
+      districtLabel:
+        "Men Toshkentda, Sergeli va Yangihayot tumanida yashayman",
       submit: "Ariza yuborish",
       submitting: "Yuborilmoqda...",
       successTitle: "Rahmat!",
@@ -142,6 +144,7 @@ export const dictionaries = {
         phoneRequired: "Iltimos, telefon raqamingizni kiriting",
         phoneInvalid: "Telefon raqam noto'g'ri. Masalan: +998 90 123 45 67",
         gradeRequired: "Iltimos, sinfni tanlang",
+        districtRequired: "Iltimos, tasdiqlang",
       },
       privacy:
         "Ma'lumotlaringiz faqat siz bilan bog'lanish uchun ishlatiladi.",
@@ -275,6 +278,8 @@ export const dictionaries = {
       gradeLabel: "В какой класс переходит ребёнок (0–11)",
       gradePlaceholder: "Выберите класс",
       gradeZero: "0 (подготовительный)",
+      districtLabel:
+        "Я живу в Ташкенте, в Сергелийском и Янгихаётском районе",
       submit: "Отправить заявку",
       submitting: "Отправка...",
       successTitle: "Спасибо!",
@@ -288,6 +293,7 @@ export const dictionaries = {
         phoneRequired: "Пожалуйста, укажите номер телефона",
         phoneInvalid: "Неверный номер. Пример: +998 90 123 45 67",
         gradeRequired: "Пожалуйста, выберите класс",
+        districtRequired: "Пожалуйста, подтвердите",
       },
       privacy:
         "Ваши данные используются только для связи с вами.",
@@ -421,6 +427,7 @@ export const dictionaries = {
       gradeLabel: "Which grade is your child entering (0–11)",
       gradePlaceholder: "Select a grade",
       gradeZero: "0 (preschool)",
+      districtLabel: "I live in Tashkent, in the Sergeli and Yangihayot districts",
       submit: "Send request",
       submitting: "Sending...",
       successTitle: "Thank you!",
@@ -433,6 +440,7 @@ export const dictionaries = {
         phoneRequired: "Please enter your phone number",
         phoneInvalid: "Invalid phone. Example: +998 90 123 45 67",
         gradeRequired: "Please select a grade",
+        districtRequired: "Please confirm",
       },
       privacy: "Your details will only be used to contact you.",
     },

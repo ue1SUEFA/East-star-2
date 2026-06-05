@@ -35,11 +35,13 @@ export function LeadForm({
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("+998 ");
   const [grade, setGrade] = useState<string>("");
+  const [district, setDistrict] = useState(false); // geo confirmation
   const [website, setWebsite] = useState(""); // honeypot
   const [errors, setErrors] = useState<{
     name?: string;
     phone?: string;
     grade?: string;
+    district?: string;
   }>({});
   const [status, setStatus] = useState<Status>("idle");
   const phoneRef = useRef<HTMLInputElement | null>(null);
@@ -71,7 +73,12 @@ export function LeadForm({
   }
 
   function validate(): boolean {
-    const next: { name?: string; phone?: string; grade?: string } = {};
+    const next: {
+      name?: string;
+      phone?: string;
+      grade?: string;
+      district?: string;
+    } = {};
     if (!isValidName(name)) next.name = t.validation.nameRequired;
     if (!phone.trim()) {
       next.phone = t.validation.phoneRequired;
@@ -87,6 +94,7 @@ export function LeadForm({
     ) {
       next.grade = t.validation.gradeRequired;
     }
+    if (!district) next.district = t.validation.districtRequired;
     setErrors(next);
     return Object.keys(next).length === 0;
   }
@@ -106,6 +114,7 @@ export function LeadForm({
           name: name.trim(),
           phone: phone.trim(),
           grade: Number(grade),
+          district, // geo confirmation — required, always true on submit
           locale,
           eventId, // shared with Meta Pixel below for CAPI dedup
           website, // honeypot — server discards if non-empty
@@ -127,6 +136,7 @@ export function LeadForm({
       setName("");
       setPhone("+998 ");
       setGrade("");
+      setDistrict(false);
       onSuccess?.();
     } catch {
       setStatus("error");
@@ -256,6 +266,31 @@ export function LeadForm({
         {errors.grade ? (
           <p className="mt-1 text-sm font-medium text-accent-700">
             {errors.grade}
+          </p>
+        ) : null}
+      </div>
+
+      <div>
+        <label
+          htmlFor={`${uid}-district`}
+          className="flex cursor-pointer items-start gap-2.5 text-sm text-ink-700"
+        >
+          <input
+            id={`${uid}-district`}
+            name="district"
+            type="checkbox"
+            checked={district}
+            onChange={(e) => setDistrict(e.target.checked)}
+            className={
+              "mt-0.5 h-5 w-5 flex-shrink-0 cursor-pointer rounded border accent-brand-700 " +
+              (errors.district ? "border-accent-500" : "border-slate-300")
+            }
+          />
+          <span>{t.districtLabel}</span>
+        </label>
+        {errors.district ? (
+          <p className="mt-1 text-sm font-medium text-accent-700">
+            {errors.district}
           </p>
         ) : null}
       </div>
