@@ -249,14 +249,20 @@ export function LeadForm({
       </div>
 
       <div>
-        <label
-          htmlFor={`${uid}-grade`}
+        {/* Plain label (no htmlFor): the grade control is a custom combobox
+            button, not a native input. A <label for> pointing at a button gets
+            its tap re-dispatched to the button on mobile (iOS Safari fires it
+            twice), which flickered the dropdown open→closed. Associate via
+            aria-labelledby instead. */}
+        <span
+          id={`${uid}-grade-label`}
           className="mb-1.5 block text-sm font-semibold text-ink-900"
         >
           {t.gradeLabel}
-        </label>
+        </span>
         <GradeSelect
           id={`${uid}-grade`}
+          labelId={`${uid}-grade-label`}
           value={grade}
           onChange={setGrade}
           placeholder={t.gradePlaceholder}

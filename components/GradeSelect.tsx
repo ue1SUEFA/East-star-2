@@ -7,6 +7,8 @@ const GRADES = Array.from({ length: 12 }, (_, i) => i); // 0..11
 
 type Props = {
   id?: string;
+  /** id of the visible label element, wired via aria-labelledby. */
+  labelId?: string;
   value: string; // "" | "0".."11"
   onChange: (v: string) => void;
   placeholder: string;
@@ -23,6 +25,7 @@ type Pos = { left: number; top: number; width: number; maxHeight: number };
  */
 export function GradeSelect({
   id,
+  labelId,
   value,
   onChange,
   placeholder,
@@ -178,6 +181,7 @@ export function GradeSelect({
         role="combobox"
         aria-haspopup="listbox"
         aria-expanded={open}
+        aria-labelledby={labelId ? `${labelId} ${id ?? ""}`.trim() : undefined}
         onClick={() => setOpen((o) => !o)}
         onKeyDown={onKeyDown}
         className={
